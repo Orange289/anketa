@@ -1,0 +1,40 @@
+body {
+  font-family: 'PT Sans', 'Arial', sans-serif;
+  font-size: 22.43px;
+  line-height: 49.83px;
+  font-weight: 700;
+  color: #000;
+  min-width: 1280px;
+  margin: 0 auto;
+  background: #939393;
+}
+.container-1 {
+  width: 1280px;
+  margin: 0 auto;
+  background: #797979;
+  box-shadow: 0 0 15px 0 rgba(121,121,121,0.4);
+}
+.container-2 {
+  width: 1000px;
+  margin: 0 auto;
+  background: #e0c18f url("../img/bg.jpg");
+}
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+header .img-logo {
+  float: left;
+  margin-top: 60px;
+  margin-left: 48px;
+  width: 154px;
+  height: 52px;
+}
+header .img-stamp {
+  float: right;
+  margin-top: 48px;
+  margin-right: 54px;
+  width: 252px;
+  height: 106px;
+}
