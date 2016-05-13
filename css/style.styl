@@ -1,23 +1,92 @@
-body
-  font-family 'PT Sans', 'Arial', sans-serif
-  font-size 22.43px
-  line-height 49.83px
-  font-weight 700
-  color #000000
-  min-width 1280px
+black = #000000
+light-gray = #939393
+gray = #797979
+dark-gray = #3d3d3d
+opaque = #e0c18f
+dark-blue = #014f98
+font-size-1 = 22.43px
+line-height-1 = 49.83px
+bold = 700
+font-family-1 = 'PT Sans'
+font-1 = bold font-size-1 font-family-1, 'Arial', sans-serif
+font-size-2 = 30px
+line-height-2 = 36px
+normal = 400
+font-family-2 = 'Courier New'
+font-2 = normal font-size-2 font-family-2, 'Times New Roman', serif
+font-size-3 = 14px
+line-height-3 = 22px
+font-3 = normal font-size-3 font-family-1, 'Arial', sans-serif
+font-size-4 = 22px
+line-height-4 = 25px
+font-4 = bold font-size-4 font-family-1, 'Arial', sans-serif
+
+center()
   margin 0 auto
-  background #939393
+container(w = 1280px, bg = light-gray)
+  center()
+  width w
+  background-color bg
+size(w, h)
+  width w
+  height h
+img-pos(f, v, g, w, h)
+  float f
+  margin-top v
+  size w h
+  if f == left
+    margin-left g
+  else
+    margin-right g
+psevdo(t = none, l = 7px, w = none, h = 1px, p1=none, p2=none)
+  content ''
+  position absolute
+  background url('../img/sprite.png') no-repeat
+  top t
+  left l
+  right 0
+  bottom 0
+  size w h
+  background-position p1 p2
+input-mixin(b, f, lh, padl)
+  border none
+  outline none
+  background none
+  position relative
+  bottom b
+  font f
+  line-height lh
+  padding-left padl
+marg(mt, mr, mb, ml)
+  margin-top mt
+  margin-right mr
+  margin-bottom mb
+  margin-left ml
+text-mixin(p, f, lh, mt, mr, mb, ml, pl)
+  position p
+  font f
+  line-height lh
+  marg mt mr mb ml
+  padding-left pl
+
+body
+  font font-1
+  line-height line-height-1
+  color black
+  container()
+  min-width 1280px
 
 .container-1
-  width 1280px
-  margin 0 auto
-  background #797979
+  container 1280px gray
   box-shadow 0 0 15px 0 rgba(121,121,121,0.4)
 
 .container-2
-  width 1000px
-  margin 0 auto
-  background #e0c18f url('../img/bg.jpg')
+  container 1000px opaque
+  background-image url('../img/bg.jpg')
+
+.container-inner
+  width 771px
+  margin 0 121px 0 110px
 
 .clearfix::after
   content ''
@@ -26,14 +95,194 @@ body
 
 header
   .img-logo
-    float left
-    margin-top 60px
-    margin-left 48px
-    width 154px
-    height 52px
+    img-pos left 64px 45px 154px 52px
+
   .img-stamp
-    float right
-    margin-top 48px
-    margin-right 54px
-    width 252px
-    height 106px
+    img-pos right 48px 54px 252px 106px
+
+main
+  .main-title
+    margin-top 27px
+    margin-bottom 45px
+    margin-left 255px
+
+  .img-act
+    size 221px 118px
+
+  .description
+    .form-first
+      font-size 0
+      label.data
+        text-mixin relative font-1 line-height-1 none 17px 13px none none
+        display inline-block
+
+
+        &:nth-of-type(1)::after
+          psevdo 30px 141px 627px 9px -55px -386px
+
+        &:nth-of-type(2)::after
+          psevdo 30px 152px 617px 9px -55px -386px
+
+        &:nth-of-type(3)::after
+          psevdo 30px 193px 575px 9px -55px -386px
+
+        &:nth-of-type(4)::after, &:nth-of-type(5)::after
+          psevdo 30px 71px 700px 9px -15px -386px
+
+      input[type='text']
+        input-mixin 13px font-2 line-height-2 13px
+
+        &:nth-of-type(1)
+          width 610px
+        &:nth-of-type(2)
+          width 600px
+        &:nth-of-type(3)
+          width 562px
+        &:nth-of-type(4), &:nth-of-type(5)
+          width 680px
+
+      span
+        font font-1
+        line-height line-height-1
+        display inline-block
+        margin-top 10px
+
+      a
+        text-mixin relative font-1 line-height-1 none 28px none none 1px
+        color dark-blue
+        text-decoration none
+        &::after
+          psevdo()
+          background-color dark-blue
+
+      .yesno
+        text-mixin relative font-1 line-height-1 none 22px none none 34px
+        cursor pointer
+        &::before
+          psevdo -7px -5px 41px 45px -15px -120px
+
+      input[type='radio']
+        display none
+
+      input:checked + .yesno::after
+        psevdo 6px 4px 23px 27px -15px -195px
+
+  .skills
+    .title
+      font font-1
+      line-height line-height-1
+      display block
+      margin-top 14px
+
+    .note
+      text-mixin relative font-3 line-height-3 -18px none none none 18px
+      color dark-gray
+      .star
+        text-mixin absolute font-2 line-height-2 none none none none none
+        top 8px
+        left 0
+
+    .form-second
+      font-size 0
+      margin-top 23px
+
+      .skills-item
+        display inline-block
+        vertical-align top
+        font font-4
+        line-height line-height-4
+        margin-right 10px
+        &:nth-child(1)
+          width 247px
+          label
+            width 221px
+        &:nth-child(2)
+          width 270px
+          label
+            width 244px
+        &:nth-child(3)
+          width 225px
+          margin-right 0
+          label
+            width 199px
+
+        .skills-content
+          margin-bottom 10px
+
+          input
+            display none
+
+          label
+            position relative
+            cursor pointer
+            display inline-block
+            padding-left 26px
+            word-wrap break-word
+
+            &::before
+              psevdo 4px 0 19px 18px -15px -15px
+
+          input:checked + label::after
+            psevdo -6px 3px 21px 27px -15px -63px
+
+footer
+  .form-third
+    padding-bottom 80px
+
+    label
+      text-mixin relative font-4 line-height-4 none 5px none none none
+      &::after
+        psevdo 16px 182px 206px 9px -15px -386px
+
+    input
+      input-mixin 12px font-2 line-height-2 12px
+
+
+// SPRITE
+.sprite {
+    background-image: url('../img/sprite.png');
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-icon-chbx {
+    width: 19px;
+    height: 18px;
+    background-position: -15px -15px;
+}
+
+.sprite-icon-chbxcheck {
+    width: 21px;
+    height: 27px;
+    background-position: -15px -63px;
+}
+
+.sprite-icon-radio {
+    width: 41px;
+    height: 45px;
+    background-position: -15px -120px;
+}
+
+.sprite-icon-radiocheck {
+    width: 23px;
+    height: 27px;
+    background-position: -15px -195px;
+}
+
+.sprite-img-slider {
+    width: 777px;
+    height: 60px;
+    background-position: -15px -252px;
+}
+
+.sprite-img-toggle {
+    width: 17px;
+    height: 14px;
+    background-position: -15px -342px;
+}
+
+.sprite-img-underline {
+    width: 700px;
+    height: 9px;
+    background-position: -15px -386px;
+}

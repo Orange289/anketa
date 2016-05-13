@@ -1,23 +1,27 @@
 mixin personal-data(datas)
   form.form-first(action='#')
     each data in datas
-      label(for='#{data.id}') #{data.item} 
+      label(for='#{data.id}').data #{data.item} 
       input(type='text' id='#{data.id}' name='#{data.id}' value='#{data.content}')
-    span Выпускник 
-    a(href='https://htmlacademy.ru/') htmlacademy.ru
+    span Выпускник
+    a(href='https://htmlacademy.ru/')           htmlacademy.ru
     input#id-yes(type='radio' name='htmlacademy' value='1' checked)
-    label(for='id-yes') Да
+    label(for='id-yes').yesno Да
     input#id-no(type='radio' name='htmlacademy' value='0')
-    label(for='id-no') Нет
+    label(for='id-no').yesno Нет
 mixin personal-skills(skills)
   span.title Практические навыки
-  span.star *
-  p.note.
-    Отемтьте только те технологии и типы задач, с которыми вы хорошо знакомы. Отсутсвие опыта отнюдь не означает, что у вас меньше шансов стать нашим сотрудником. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+  .note
+    span.star *
+    p.
+      Отемтьте только те технологии и типы задач, с которыми вы хорошо знакомы. Отсутсвие опыта отнюдь не означает, что у вас меньше шансов стать нашим сотрудником. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
   form.form-second(action='#')
     each skill in skills
-      input(type='checkbox' id='#{skill.item}' name='#{skill.item}')
-      label(for='#{skill.item}') #{skill.content}
+      .skills-item
+        each s in skill
+          .skills-content
+            input(type='checkbox' id='#{s.item}' name='#{s.item}' checked)
+            label(for='#{s.item}') #{s.content}
     
     
     

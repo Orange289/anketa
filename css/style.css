@@ -1,23 +1,27 @@
 body {
-  font-family: 'PT Sans', 'Arial', sans-serif;
-  font-size: 22.43px;
+  font: 700 22.43px 'PT Sans', 'Arial', sans-serif;
   line-height: 49.83px;
-  font-weight: 700;
   color: #000;
-  min-width: 1280px;
   margin: 0 auto;
-  background: #939393;
+  width: 1280px;
+  background-color: #939393;
+  min-width: 1280px;
 }
 .container-1 {
-  width: 1280px;
   margin: 0 auto;
-  background: #797979;
+  width: 1280px;
+  background-color: #797979;
   box-shadow: 0 0 15px 0 rgba(121,121,121,0.4);
 }
 .container-2 {
-  width: 1000px;
   margin: 0 auto;
-  background: #e0c18f url("../img/bg.jpg");
+  width: 1000px;
+  background-color: #e0c18f;
+  background-image: url("../img/bg.jpg");
+}
+.container-inner {
+  width: 771px;
+  margin: 0 121px 0 110px;
 }
 .clearfix::after {
   content: '';
@@ -26,15 +30,338 @@ body {
 }
 header .img-logo {
   float: left;
-  margin-top: 60px;
-  margin-left: 48px;
+  margin-top: 64px;
   width: 154px;
   height: 52px;
+  margin-left: 45px;
 }
 header .img-stamp {
   float: right;
   margin-top: 48px;
-  margin-right: 54px;
   width: 252px;
   height: 106px;
+  margin-right: 54px;
+}
+main .main-title {
+  margin-top: 27px;
+  margin-bottom: 45px;
+  margin-left: 255px;
+}
+main .img-act {
+  width: 221px;
+  height: 118px;
+}
+main .description .form-first {
+  font-size: 0;
+}
+main .description .form-first label.data {
+  position: relative;
+  font: 700 22.43px 'PT Sans', 'Arial', sans-serif;
+  line-height: 49.83px;
+  margin-top: none;
+  margin-right: 17px;
+  margin-bottom: 13px;
+  margin-left: none;
+  padding-left: none;
+  display: inline-block;
+}
+main .description .form-first label.data:nth-of-type(1)::after {
+  content: '';
+  position: absolute;
+  background: url("../img/sprite.png") no-repeat;
+  top: 30px;
+  left: 141px;
+  right: 0;
+  bottom: 0;
+  width: 627px;
+  height: 9px;
+  background-position: -55px -386px;
+}
+main .description .form-first label.data:nth-of-type(2)::after {
+  content: '';
+  position: absolute;
+  background: url("../img/sprite.png") no-repeat;
+  top: 30px;
+  left: 152px;
+  right: 0;
+  bottom: 0;
+  width: 617px;
+  height: 9px;
+  background-position: -55px -386px;
+}
+main .description .form-first label.data:nth-of-type(3)::after {
+  content: '';
+  position: absolute;
+  background: url("../img/sprite.png") no-repeat;
+  top: 30px;
+  left: 193px;
+  right: 0;
+  bottom: 0;
+  width: 575px;
+  height: 9px;
+  background-position: -55px -386px;
+}
+main .description .form-first label.data:nth-of-type(4)::after,
+main .description .form-first label.data:nth-of-type(5)::after {
+  content: '';
+  position: absolute;
+  background: url("../img/sprite.png") no-repeat;
+  top: 30px;
+  left: 71px;
+  right: 0;
+  bottom: 0;
+  width: 700px;
+  height: 9px;
+  background-position: -15px -386px;
+}
+main .description .form-first input[type='text'] {
+  border: none;
+  outline: none;
+  background: none;
+  position: relative;
+  bottom: 13px;
+  font: 400 30px 'Courier New', 'Times New Roman', serif;
+  line-height: 36px;
+  padding-left: 13px;
+}
+main .description .form-first input[type='text']:nth-of-type(1) {
+  width: 610px;
+}
+main .description .form-first input[type='text']:nth-of-type(2) {
+  width: 600px;
+}
+main .description .form-first input[type='text']:nth-of-type(3) {
+  width: 562px;
+}
+main .description .form-first input[type='text']:nth-of-type(4),
+main .description .form-first input[type='text']:nth-of-type(5) {
+  width: 680px;
+}
+main .description .form-first span {
+  font: 700 22.43px 'PT Sans', 'Arial', sans-serif;
+  line-height: 49.83px;
+  display: inline-block;
+  margin-top: 10px;
+}
+main .description .form-first a {
+  position: relative;
+  font: 700 22.43px 'PT Sans', 'Arial', sans-serif;
+  line-height: 49.83px;
+  margin-top: none;
+  margin-right: 28px;
+  margin-bottom: none;
+  margin-left: none;
+  padding-left: 1px;
+  color: #014f98;
+  text-decoration: none;
+}
+main .description .form-first a::after {
+  content: '';
+  position: absolute;
+  background: url("../img/sprite.png") no-repeat;
+  top: none;
+  left: 7px;
+  right: 0;
+  bottom: 0;
+  width: none;
+  height: 1px;
+  background-position: none none;
+  background-color: #014f98;
+}
+main .description .form-first .yesno {
+  position: relative;
+  font: 700 22.43px 'PT Sans', 'Arial', sans-serif;
+  line-height: 49.83px;
+  margin-top: none;
+  margin-right: 22px;
+  margin-bottom: none;
+  margin-left: none;
+  padding-left: 34px;
+  cursor: pointer;
+}
+main .description .form-first .yesno::before {
+  content: '';
+  position: absolute;
+  background: url("../img/sprite.png") no-repeat;
+  top: -7px;
+  left: -5px;
+  right: 0;
+  bottom: 0;
+  width: 41px;
+  height: 45px;
+  background-position: -15px -120px;
+}
+main .description .form-first input[type='radio'] {
+  display: none;
+}
+main .description .form-first input:checked + .yesno::after {
+  content: '';
+  position: absolute;
+  background: url("../img/sprite.png") no-repeat;
+  top: 6px;
+  left: 4px;
+  right: 0;
+  bottom: 0;
+  width: 23px;
+  height: 27px;
+  background-position: -15px -195px;
+}
+main .skills .title {
+  font: 700 22.43px 'PT Sans', 'Arial', sans-serif;
+  line-height: 49.83px;
+  display: block;
+  margin-top: 14px;
+}
+main .skills .note {
+  position: relative;
+  font: 400 14px 'PT Sans', 'Arial', sans-serif;
+  line-height: 22px;
+  color: #3d3d3d;
+  margin-top: -18px;
+  padding-left: 18px;
+}
+main .skills .note .star {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  font: 400 30px 'Courier New', 'Times New Roman', serif;
+  line-height: 36px;
+}
+main .skills .form-second {
+  font-size: 0;
+  margin-top: 23px;
+}
+main .skills .form-second .skills-item {
+  display: inline-block;
+  vertical-align: top;
+  font: 700 22px 'PT Sans', 'Arial', sans-serif;
+  line-height: 25px;
+  margin-right: 10px;
+}
+main .skills .form-second .skills-item:nth-child(1) {
+  width: 247px;
+}
+main .skills .form-second .skills-item:nth-child(1) label {
+  width: 221px;
+}
+main .skills .form-second .skills-item:nth-child(2) {
+  width: 270px;
+}
+main .skills .form-second .skills-item:nth-child(2) label {
+  width: 244px;
+}
+main .skills .form-second .skills-item:nth-child(3) {
+  width: 225px;
+  margin-right: 0;
+}
+main .skills .form-second .skills-item:nth-child(3) label {
+  width: 199px;
+}
+main .skills .form-second .skills-item .skills-content {
+  margin-bottom: 10px;
+}
+main .skills .form-second .skills-item .skills-content input {
+  display: none;
+}
+main .skills .form-second .skills-item .skills-content label {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 26px;
+  word-wrap: break-word;
+}
+main .skills .form-second .skills-item .skills-content label::before {
+  content: '';
+  position: absolute;
+  background: url("../img/sprite.png") no-repeat;
+  top: 4px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 19px;
+  height: 18px;
+  background-position: -15px -15px;
+}
+main .skills .form-second .skills-item .skills-content input:checked + label::after {
+  content: '';
+  position: absolute;
+  background: url("../img/sprite.png") no-repeat;
+  top: -6px;
+  left: 3px;
+  right: 0;
+  bottom: 0;
+  width: 21px;
+  height: 27px;
+  background-position: -15px -63px;
+}
+footer .form-third {
+  padding-bottom: 80px;
+}
+footer .form-third label {
+  position: relative;
+  font: 700 22px 'PT Sans', 'Arial', sans-serif;
+  line-height: 25px;
+  margin-right: 5px;
+}
+footer .form-third label::after {
+  content: '';
+  position: absolute;
+  background: url("../img/sprite.png") no-repeat;
+  top: 16px;
+  left: 182px;
+  right: 0;
+  bottom: 0;
+  width: 206px;
+  height: 9px;
+  background-position: -15px -386px;
+}
+footer .form-third input {
+  border: none;
+  outline: none;
+  background: none;
+  position: relative;
+  bottom: 12px;
+  font: 400 30px 'Courier New', 'Times New Roman', serif;
+  line-height: 36px;
+  padding-left: 12px;
+}
+.sprite {
+  background-image: url("../img/sprite.png");
+  background-repeat: no-repeat;
+  display: block;
+}
+.sprite-icon-chbx {
+  width: 19px;
+  height: 18px;
+  background-position: -15px -15px;
+}
+.sprite-icon-chbxcheck {
+  width: 21px;
+  height: 27px;
+  background-position: -15px -63px;
+}
+.sprite-icon-radio {
+  width: 41px;
+  height: 45px;
+  background-position: -15px -120px;
+}
+.sprite-icon-radiocheck {
+  width: 23px;
+  height: 27px;
+  background-position: -15px -195px;
+}
+.sprite-img-slider {
+  width: 777px;
+  height: 60px;
+  background-position: -15px -252px;
+}
+.sprite-img-toggle {
+  width: 17px;
+  height: 14px;
+  background-position: -15px -342px;
+}
+.sprite-img-underline {
+  width: 700px;
+  height: 9px;
+  background-position: -15px -386px;
 }
